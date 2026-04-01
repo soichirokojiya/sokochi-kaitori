@@ -10,7 +10,7 @@ export default function Header() {
     <header className="bg-white sticky top-0 z-50 border-b border-[var(--color-border)]">
       <div className="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 cursor-pointer">
-          <div className="w-10 h-10 bg-[var(--color-primary)] rounded-lg flex items-center justify-center flex-shrink-0">
+          <div className="w-11 h-11 bg-[var(--color-primary)] rounded-lg flex items-center justify-center flex-shrink-0">
             <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6">
               <path d="M10 32 C14 28, 20 30, 24 26 C28 22, 34 24, 38 20" stroke="#60A5FA" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
               <path d="M10 26 C14 22, 20 24, 24 20 C28 16, 34 18, 38 14" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.9"/>
@@ -19,8 +19,8 @@ export default function Header() {
             </svg>
           </div>
           <div className="leading-snug">
-            <div className="text-[13px] font-bold text-[var(--color-primary)]">底地の共有持分買取</div>
-            <div className="text-[11px] text-[var(--color-text-muted)]">底地ドットコム</div>
+            <div className="text-base font-bold text-[var(--color-primary)]">底地の共有持分専門</div>
+            <div className="text-xs text-[var(--color-text-muted)]">底地ドットコム</div>
           </div>
         </Link>
 
