@@ -17,46 +17,27 @@ export const metadata: Metadata = {
     template: "%s｜底地の共有持分買取 Common Future & Co.",
   },
   description:
-    "底地の共有持分でお困りですか？他の共有者の同意不要で、あなたの持分だけ売却できます。最短当日買取・上限価格なし。底地×共有持分に特化した専門買取。全国対応。Common Future & Co.株式会社",
-  keywords: [
-    "底地",
-    "共有持分",
-    "買取",
-    "底地 売却",
-    "共有持分 売却",
-    "底地 共有持分",
-    "底地 相続",
-    "底地 買取業者",
-  ],
-  icons: {
-    icon: "/favicon.png",
-    apple: "/apple-touch-icon.png",
-  },
+    "底地の共有持分でお困りですか？他の共有者の同意不要で、あなたの持分だけ売却できます。最短当日買取・上限価格なし。底地×共有持分に特化した専門買取。全国対応。",
+  keywords: ["底地", "共有持分", "買取", "底地 売却", "共有持分 売却", "底地 共有持分", "底地 相続", "底地 買取業者"],
+  icons: { icon: "/favicon.png", apple: "/apple-touch-icon.png" },
   openGraph: {
     type: "website",
     locale: "ja_JP",
     siteName: "底地の共有持分買取｜Common Future & Co.",
-    title: "底地の共有持分買取｜最短当日買取・上限価格なし｜Common Future & Co.",
-    description:
-      "底地の共有持分でお困りですか？他の共有者の同意不要。あなたの持分だけ売却可能。最短当日買取・上限価格なし。",
+    title: "底地の共有持分買取｜最短当日買取・上限価格なし",
+    description: "他の共有者の同意不要。あなたの持分だけ売却可能。最短当日買取・上限価格なし。",
   },
   twitter: {
     card: "summary_large_image",
     title: "底地の共有持分買取｜Common Future & Co.",
-    description:
-      "底地の共有持分に特化した専門買取サービス。最短当日買取・上限価格なし・全国対応。",
+    description: "底地の共有持分に特化した専門買取サービス。最短当日買取・上限価格なし・全国対応。",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ja" className={`${notoSansJP.variable} h-full antialiased`}>
       <head>
@@ -75,7 +56,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="min-h-full flex flex-col text-base md:text-lg"
+        className="min-h-full flex flex-col"
         style={{ fontFamily: "var(--font-noto-sans-jp), sans-serif" }}
       >
         <Header />

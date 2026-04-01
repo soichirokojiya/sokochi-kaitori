@@ -1,40 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  /* 安心感のある深いブルーグリーン + 爽やかなアクセント */
-  --color-primary: #1b6b5a;
-  --color-primary-light: #238c74;
-  --color-primary-dark: #134d41;
-  --color-accent: #e8943a;
-  --color-accent-light: #f0ab5e;
-  --color-bg: #fafbf9;
-  --color-bg-dark: #f0f2ed;
-  --color-text: #333333;
-  --color-text-light: #666666;
-  --color-white: #ffffff;
-  --color-success: #2d8a4e;
-  --color-border: #dde3d8;
-  --color-soft-green: #e8f0e6;
+  /* Trust teal + Professional blue - 安心・信頼・爽やか */
+  --color-primary: #0F766E;
+  --color-primary-light: #14B8A6;
+  --color-primary-dark: #0D5F59;
+  --color-cta: #0369A1;
+  --color-cta-light: #0284C7;
+  --color-bg: #F0FDFA;
+  --color-bg-white: #FFFFFF;
+  --color-bg-muted: #F0F9FF;
+  --color-text: #134E4A;
+  --color-text-light: #475569;
+  --color-text-muted: #64748B;
+  --color-success: #059669;
+  --color-border: #D1E9E5;
+  --color-accent-warm: #D97706;
 }
 
 @theme inline {
   --color-primary: var(--color-primary);
   --color-primary-light: var(--color-primary-light);
   --color-primary-dark: var(--color-primary-dark);
-  --color-accent: var(--color-accent);
-  --color-accent-light: var(--color-accent-light);
+  --color-cta: var(--color-cta);
+  --color-cta-light: var(--color-cta-light);
   --color-bg: var(--color-bg);
-  --color-bg-dark: var(--color-bg-dark);
+  --color-bg-white: var(--color-bg-white);
+  --color-bg-muted: var(--color-bg-muted);
   --color-text: var(--color-text);
   --color-text-light: var(--color-text-light);
+  --color-text-muted: var(--color-text-muted);
   --color-success: var(--color-success);
   --color-border: var(--color-border);
-  --color-soft-green: var(--color-soft-green);
+  --color-accent-warm: var(--color-accent-warm);
 }
 
 body {
-  background: var(--color-bg);
+  background: var(--color-bg-white);
   color: var(--color-text);
+  font-size: 17px;
+  line-height: 1.75;
 }
 
 html {
@@ -43,52 +48,20 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-gradient { animation: none; }
-  .animate-fade-in-up { animation: none; }
+  .hero-bg { animation: none; }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-bg-dark);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 4px;
+/* Clean hero - 落ち着いた信頼感 */
+.hero-bg {
+  background: linear-gradient(160deg, #0F766E 0%, #0D9488 50%, #0F766E 100%);
 }
 
-/* Hero gradient - 安心感のある落ち着いたグリーン */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Subtle fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.hero-gradient {
-  background: linear-gradient(135deg, #1b6b5a 0%, #238c74 30%, #1b6b5a 60%, #134d41 100%);
-  background-size: 200% 200%;
-  animation: gradientShift 12s ease infinite;
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }
-
-/* Fade in animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-delay-100 { animation-delay: 0.1s; }
-.animate-delay-200 { animation-delay: 0.2s; }
-.animate-delay-300 { animation-delay: 0.3s; }
-.animate-delay-400 { animation-delay: 0.4s; }
