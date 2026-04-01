@@ -91,16 +91,16 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="contact-location" className="block font-bold mb-2 text-[15px]">
-          物件所在地 <span className="text-[var(--color-text-muted)] text-sm font-normal">任意</span>
+          物件所在地（途中まででもOK） <span className="text-red-500 text-sm">必須</span>
         </label>
-        <input id="contact-location" type="text" name="location" value={formData.location} onChange={handleChange} placeholder="東京都新宿区○○町1-2-3" className={inputClass} />
+        <input id="contact-location" type="text" name="location" required value={formData.location} onChange={handleChange} placeholder="東京都新宿区○○町1-2-3" className={inputClass} />
       </div>
 
       <div>
         <label htmlFor="contact-message" className="block font-bold mb-2 text-[15px]">
-          ご相談内容 <span className="text-[var(--color-text-muted)] text-sm font-normal">任意</span>
+          ご相談内容 <span className="text-red-500 text-sm">必須</span>
         </label>
-        <textarea id="contact-message" name="message" rows={4} value={formData.message} onChange={handleChange} placeholder="ご状況やご質問をお聞かせください" className={`${inputClass} resize-none`} />
+        <textarea id="contact-message" name="message" rows={4} required value={formData.message} onChange={handleChange} placeholder="ご状況やご質問をお聞かせください" className={`${inputClass} resize-none`} />
       </div>
 
       {status === "error" && (

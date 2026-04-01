@@ -26,9 +26,9 @@ export async function POST(request: Request) {
 
   const { name, phone, email, location, share, message } = body as Record<string, unknown>;
 
-  if (typeof name !== "string" || typeof phone !== "string" || typeof email !== "string") {
+  if (typeof name !== "string" || typeof phone !== "string" || typeof email !== "string" || typeof location !== "string" || typeof message !== "string") {
     return Response.json(
-      { error: "お名前、電話番号、メールアドレスは必須です" },
+      { error: "必須項目を入力してください" },
       { status: 400 }
     );
   }
@@ -36,10 +36,12 @@ export async function POST(request: Request) {
   const trimmedName = name.trim();
   const trimmedPhone = phone.trim();
   const trimmedEmail = email.trim();
+  const trimmedLocation = location.trim();
+  const trimmedMessage = message.trim();
 
-  if (!trimmedName || !trimmedPhone || !trimmedEmail) {
+  if (!trimmedName || !trimmedPhone || !trimmedEmail || !trimmedLocation || !trimmedMessage) {
     return Response.json(
-      { error: "お名前、電話番号、メールアドレスは必須です" },
+      { error: "お名前、電話番号、メールアドレス、物件所在地、ご相談内容は必須です" },
       { status: 400 }
     );
   }
