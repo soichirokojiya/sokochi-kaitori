@@ -7,13 +7,12 @@ interface FormData {
   phone: string;
   email: string;
   location: string;
-  share: string;
   message: string;
 }
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
-    name: "", phone: "", email: "", location: "", share: "", message: "",
+    name: "", phone: "", email: "", location: "", message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -37,7 +36,7 @@ export default function ContactForm() {
         throw new Error(data.error || "送信に失敗しました");
       }
       setStatus("success");
-      setFormData({ name: "", phone: "", email: "", location: "", share: "", message: "" });
+      setFormData({ name: "", phone: "", email: "", location: "", message: "" });
     } catch (err) {
       setStatus("error");
       setErrorMessage(err instanceof Error ? err.message : "送信に失敗しました");
@@ -95,20 +94,6 @@ export default function ContactForm() {
           物件所在地 <span className="text-[var(--color-text-muted)] text-sm font-normal">任意</span>
         </label>
         <input id="contact-location" type="text" name="location" value={formData.location} onChange={handleChange} placeholder="東京都新宿区○○町1-2-3" className={inputClass} />
-      </div>
-
-      <div>
-        <label htmlFor="contact-share" className="block font-bold mb-2 text-[15px]">
-          共有持分の割合 <span className="text-[var(--color-text-muted)] text-sm font-normal">任意</span>
-        </label>
-        <select id="contact-share" name="share" value={formData.share} onChange={handleChange} className={inputClass}>
-          <option value="">選択してください</option>
-          <option value="1/2">1/2（2分の1）</option>
-          <option value="1/3">1/3（3分の1）</option>
-          <option value="1/4">1/4（4分の1）</option>
-          <option value="1/5以下">1/5以下</option>
-          <option value="その他">その他・不明</option>
-        </select>
       </div>
 
       <div>

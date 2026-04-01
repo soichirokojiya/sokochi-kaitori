@@ -18,7 +18,10 @@ export default function Header() {
               <rect x="8" y="36" width="32" height="3" rx="1.5" fill="#60A5FA" opacity="0.6"/>
             </svg>
           </div>
-          <div className="text-[15px] font-bold text-[var(--color-primary)] leading-snug">底地の共有持分買取</div>
+          <div className="leading-snug">
+            <div className="text-[13px] font-bold text-[var(--color-primary)]">底地の共有持分買取</div>
+            <div className="text-[11px] text-[var(--color-text-muted)]">底地ドットコム</div>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium text-[var(--color-text-light)]">
