@@ -9,8 +9,10 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
                 <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6">
-                  <path d="M24 8L8 20v18a2 2 0 002 2h10v-10h8v10h10a2 2 0 002-2V20L24 8z" fill="#fff"/>
-                  <rect x="18" y="28" width="4" height="4" fill="#14B8A6"/>
+                  <path d="M10 32 C14 28, 20 30, 24 26 C28 22, 34 24, 38 20" stroke="#14B8A6" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+                  <path d="M10 26 C14 22, 20 24, 24 20 C28 16, 34 18, 38 14" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.9"/>
+                  <path d="M10 20 C14 16, 20 18, 24 14 C28 10, 34 12, 38 8" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.5"/>
+                  <rect x="8" y="36" width="32" height="3" rx="1.5" fill="#14B8A6" opacity="0.6"/>
                 </svg>
               </div>
               <div>
