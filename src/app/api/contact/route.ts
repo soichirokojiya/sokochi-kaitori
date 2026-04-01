@@ -98,7 +98,7 @@ export async function POST(request: Request) {
     `;
 
     await resend.emails.send({
-      from: "底地共有持分買取 <onboarding@resend.dev>",
+      from: "底地ドットコム <info@socochi.com>",
       to: ["koujiy@souichirou.org", "mokeygod@gmail.com"],
       subject: `【底地買取査定】${safeName}様からのお問い合わせ`,
       html: emailHtml,
