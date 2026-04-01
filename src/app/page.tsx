@@ -1,12 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
     <>
-      {/* Hero - クリーンで信頼感 */}
-      <section className="hero-bg text-white">
-        <div className="max-w-5xl mx-auto px-5 py-20 md:py-28">
+      {/* Hero - 日本の住宅街写真 + テキスト */}
+      <section className="relative bg-[var(--color-primary-dark)] text-white overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1751203659198-6fee30bf6df2?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1600"
+          alt="日本の住宅街"
+          fill
+          className="object-cover opacity-25"
+          priority
+        />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 py-20 md:py-28">
           <div className="max-w-2xl">
             <p className="inline-block text-sm font-semibold bg-white/15 backdrop-blur-sm px-4 py-1.5 rounded-full mb-8 border border-white/20">
               底地 × 共有持分 専門の買取サービス
@@ -23,7 +31,7 @@ export default function Home() {
             </p>
             <Link
               href="#contact"
-              className="inline-block bg-[var(--color-cta)] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[var(--color-cta-light)] transition-colors duration-200 cursor-pointer"
+              className="inline-block bg-[var(--color-cta)] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[var(--color-cta-light)] transition-colors duration-200 cursor-pointer shadow-lg"
             >
               無料査定を申し込む
             </Link>
@@ -103,11 +111,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 選ばれる理由 */}
+      {/* 選ばれる理由 + 相談写真 */}
       <section id="about" className="py-20 bg-[var(--color-bg)]">
         <div className="max-w-5xl mx-auto px-5">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">選ばれる理由</h2>
           <p className="text-center text-[var(--color-text-muted)] mb-12">底地×共有持分の専門家として、複雑な案件に対応します</p>
+
+          {/* 相談風景の写真 */}
+          <div className="relative w-full h-56 md:h-72 rounded-2xl overflow-hidden mb-10">
+            <Image
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1200"
+              alt="専門スタッフとの丁寧なご相談風景"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            <p className="absolute bottom-5 left-6 text-white font-bold text-lg">
+              専門スタッフが丁寧にご相談をお受けします
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-6">
             {[
               { num: "01", title: "底地×共有持分に完全特化", desc: "「底地の共有持分」という最もニッチな領域に特化。借地権が絡む複雑な権利関係にも精通しています。" },
@@ -129,60 +152,92 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 底地の共有持分とは */}
+      {/* 底地の共有持分とは - 写真付き */}
       <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-5">
+        <div className="max-w-5xl mx-auto px-5">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
             そもそも「底地の共有持分」とは？
           </h2>
-          <div className="space-y-6">
-            <div className="bg-[var(--color-bg)] rounded-xl p-7 border border-[var(--color-border)]">
-              <h3 className="font-bold text-lg mb-3 text-[var(--color-primary)]">底地（そこち）とは</h3>
-              <p className="text-[var(--color-text-light)] leading-relaxed">
-                借地権が設定されている土地のうち、地主が持っている所有権のことです。借地人が建物を建てて使用しているため、地主は自由に土地を使えず、得られる収益は地代のみ。更地に比べて市場価値が大幅に低くなります。
-              </p>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="space-y-6">
+              <div className="bg-[var(--color-bg)] rounded-xl p-7 border border-[var(--color-border)]">
+                <h3 className="font-bold text-lg mb-3 text-[var(--color-primary)]">底地（そこち）とは</h3>
+                <p className="text-[var(--color-text-light)] leading-relaxed">
+                  借地権が設定されている土地のうち、地主が持っている所有権のことです。借地人が建物を建てて使用しているため、地主は自由に土地を使えず、得られる収益は地代のみ。更地に比べて市場価値が大幅に低くなります。
+                </p>
+              </div>
+              <div className="bg-[var(--color-bg)] rounded-xl p-7 border border-[var(--color-border)]">
+                <h3 className="font-bold text-lg mb-3 text-[var(--color-primary)]">共有持分とは</h3>
+                <p className="text-[var(--color-text-light)] leading-relaxed">
+                  一つの不動産を複数人で所有している場合の、各人の持ち分（権利の割合）のことです。主に相続をきっかけに発生し、全員の同意がないと不動産全体の売却や大規模な変更ができません。
+                </p>
+              </div>
             </div>
-            <div className="bg-[var(--color-bg)] rounded-xl p-7 border border-[var(--color-border)]">
-              <h3 className="font-bold text-lg mb-3 text-[var(--color-primary)]">共有持分とは</h3>
-              <p className="text-[var(--color-text-light)] leading-relaxed">
-                一つの不動産を複数人で所有している場合の、各人の持ち分（権利の割合）のことです。主に相続をきっかけに発生し、全員の同意がないと不動産全体の売却や大規模な変更ができません。
-              </p>
-            </div>
-            <div className="bg-[var(--color-bg-muted)] rounded-xl p-7 border-2 border-[var(--color-cta)]/30">
-              <h3 className="font-bold text-lg mb-3 text-[var(--color-cta)]">底地 × 共有持分 = 二重の制約</h3>
-              <p className="text-[var(--color-text-light)] leading-relaxed">
-                「借地権の制約」と「共有の制約」が二重にかかった状態です。一般の不動産会社では取り扱いが難しく、専門知識を持った業者でなければ適切な査定・買取ができません。だからこそ、<strong className="text-[var(--color-primary)]">専門特化した当社</strong>にお任せください。
-              </p>
+            <div className="space-y-6">
+              <div className="relative h-48 md:h-56 rounded-xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1744591848461-a4b392d0245f?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=800"
+                  alt="日本の住宅街の様子"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="bg-[var(--color-bg-muted)] rounded-xl p-7 border-2 border-[var(--color-cta)]/30">
+                <h3 className="font-bold text-lg mb-3 text-[var(--color-cta)]">底地 × 共有持分 = 二重の制約</h3>
+                <p className="text-[var(--color-text-light)] leading-relaxed">
+                  「借地権の制約」と「共有の制約」が二重にかかった状態です。一般の不動産会社では取り扱いが難しく、<strong className="text-[var(--color-primary)]">専門特化した当社</strong>にお任せください。
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 買取の流れ */}
+      {/* 買取の流れ - 写真付き */}
       <section id="flow" className="py-20 bg-[var(--color-bg)]">
-        <div className="max-w-3xl mx-auto px-5">
+        <div className="max-w-5xl mx-auto px-5">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">かんたん4ステップ</h2>
-          <div className="space-y-0">
-            {[
-              { title: "無料査定のお申し込み", desc: "フォームでお気軽にご連絡ください。", time: "所要時間：5分" },
-              { title: "物件調査・査定", desc: "登記簿謄本や周辺相場をもとに適正に査定します。", time: "最短即日" },
-              { title: "買取金額のご提示", desc: "査定結果をご説明します。お断りいただいても構いません。", time: "査定後すぐ" },
-              { title: "契約・お支払い", desc: "契約締結後、指定口座にお振込み。手続きは当社が代行。", time: "最短当日で完了" },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-6">
-                <div className="flex flex-col items-center">
-                  <div className="w-11 h-11 bg-[var(--color-primary)] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 z-10">
-                    {i + 1}
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div className="space-y-0">
+              {[
+                { title: "無料査定のお申し込み", desc: "フォームでお気軽にご連絡ください。", time: "所要時間：5分" },
+                { title: "物件調査・査定", desc: "登記簿謄本や周辺相場をもとに適正に査定します。", time: "最短即日" },
+                { title: "買取金額のご提示", desc: "査定結果をご説明します。お断りいただいても構いません。", time: "査定後すぐ" },
+                { title: "契約・お支払い", desc: "契約締結後、指定口座にお振込み。手続きは当社が代行。", time: "最短当日で完了" },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-5">
+                  <div className="flex flex-col items-center">
+                    <div className="w-11 h-11 bg-[var(--color-primary)] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 z-10">
+                      {i + 1}
+                    </div>
+                    {i < 3 && <div className="w-px h-full bg-[var(--color-border)] my-1" />}
                   </div>
-                  {i < 3 && <div className="w-px h-full bg-[var(--color-border)] my-1" />}
+                  <div className="pb-8">
+                    <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                    <p className="text-[var(--color-text-light)] mb-2">{item.desc}</p>
+                    <span className="text-sm text-[var(--color-primary)] font-medium">{item.time}</span>
+                  </div>
                 </div>
-                <div className="pb-10">
-                  <h3 className="font-bold text-lg mb-1">{item.title}</h3>
-                  <p className="text-[var(--color-text-light)] mb-2">{item.desc}</p>
-                  <span className="text-sm text-[var(--color-primary)] font-medium">{item.time}</span>
-                </div>
+              ))}
+            </div>
+            <div className="space-y-5">
+              <div className="relative h-52 rounded-xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=800"
+                  alt="査定・書類確認の様子"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
+              <div className="relative h-52 rounded-xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1603796846097-bee99e4a601f?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=800"
+                  alt="契約書へのサイン"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -262,9 +317,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA + フォーム */}
-      <section id="contact" className="py-20 hero-bg text-white">
-        <div className="max-w-3xl mx-auto px-5">
+      {/* CTA + フォーム - 街並み写真背景 */}
+      <section id="contact" className="relative py-20 text-white overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1742317402143-449e8b4cbf91?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1600"
+          alt=""
+          fill
+          className="object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-[var(--color-primary-dark)]/85" />
+        <div className="relative z-10 max-w-3xl mx-auto px-5">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">まずは無料査定からお気軽にどうぞ</h2>
             <p className="opacity-90 text-lg leading-relaxed">
