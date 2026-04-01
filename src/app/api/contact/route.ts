@@ -2,48 +2,93 @@ import { Resend } from "resend";
 
 export const dynamic = "force-dynamic";
 
+const escapeHtml = (s: string) =>
+  s
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
+
+  let body: unknown;
   try {
-    const body = await request.json();
-    const { name, phone, email, location, share, message } = body;
+    body = await request.json();
+  } catch {
+    return Response.json({ error: "不正なリクエストです" }, { status: 400 });
+  }
 
-    if (!name || !phone || !email) {
-      return Response.json(
-        { error: "お名前、電話番号、メールアドレスは必須です" },
-        { status: 400 }
-      );
-    }
+  if (typeof body !== "object" || body === null) {
+    return Response.json({ error: "不正なリクエストです" }, { status: 400 });
+  }
 
+  const { name, phone, email, location, share, message } = body as Record<string, unknown>;
+
+  if (typeof name !== "string" || typeof phone !== "string" || typeof email !== "string") {
+    return Response.json(
+      { error: "お名前、電話番号、メールアドレスは必須です" },
+      { status: 400 }
+    );
+  }
+
+  const trimmedName = name.trim();
+  const trimmedPhone = phone.trim();
+  const trimmedEmail = email.trim();
+
+  if (!trimmedName || !trimmedPhone || !trimmedEmail) {
+    return Response.json(
+      { error: "お名前、電話番号、メールアドレスは必須です" },
+      { status: 400 }
+    );
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+    return Response.json({ error: "メールアドレスの形式が正しくありません" }, { status: 400 });
+  }
+
+  if (trimmedName.length > 100 || trimmedPhone.length > 30 || trimmedEmail.length > 254) {
+    return Response.json({ error: "入力値が長すぎます" }, { status: 400 });
+  }
+
+  const safeName = escapeHtml(trimmedName);
+  const safePhone = escapeHtml(trimmedPhone);
+  const safeEmail = escapeHtml(trimmedEmail);
+  const safeLocation = escapeHtml(typeof location === "string" ? location.trim() : "");
+  const safeShare = escapeHtml(typeof share === "string" ? share.trim() : "");
+  const safeMessage = escapeHtml(typeof message === "string" ? message.trim() : "");
+
+  try {
     const emailHtml = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #1a3a5c; border-bottom: 2px solid #c8a45e; padding-bottom: 10px;">
+        <h2 style="color: #1b6b5a; border-bottom: 2px solid #e8943a; padding-bottom: 10px;">
           底地共有持分 買取査定のお問い合わせ
         </h2>
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px; font-weight: bold; width: 140px; color: #1a3a5c;">お名前</td>
-            <td style="padding: 12px;">${name}</td>
+            <td style="padding: 12px; font-weight: bold; width: 140px; color: #1b6b5a;">お名前</td>
+            <td style="padding: 12px;">${safeName}</td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px; font-weight: bold; color: #1a3a5c;">電話番号</td>
-            <td style="padding: 12px;">${phone}</td>
+            <td style="padding: 12px; font-weight: bold; color: #1b6b5a;">電話番号</td>
+            <td style="padding: 12px;">${safePhone}</td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px; font-weight: bold; color: #1a3a5c;">メールアドレス</td>
-            <td style="padding: 12px;">${email}</td>
+            <td style="padding: 12px; font-weight: bold; color: #1b6b5a;">メールアドレス</td>
+            <td style="padding: 12px;">${safeEmail}</td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px; font-weight: bold; color: #1a3a5c;">物件所在地</td>
-            <td style="padding: 12px;">${location || "未入力"}</td>
+            <td style="padding: 12px; font-weight: bold; color: #1b6b5a;">物件所在地</td>
+            <td style="padding: 12px;">${safeLocation || "未入力"}</td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px; font-weight: bold; color: #1a3a5c;">共有持分の割合</td>
-            <td style="padding: 12px;">${share || "未入力"}</td>
+            <td style="padding: 12px; font-weight: bold; color: #1b6b5a;">共有持分の割合</td>
+            <td style="padding: 12px;">${safeShare || "未入力"}</td>
           </tr>
           <tr>
-            <td style="padding: 12px; font-weight: bold; color: #1a3a5c; vertical-align: top;">ご相談内容</td>
-            <td style="padding: 12px; white-space: pre-wrap;">${message || "未入力"}</td>
+            <td style="padding: 12px; font-weight: bold; color: #1b6b5a; vertical-align: top;">ご相談内容</td>
+            <td style="padding: 12px; white-space: pre-wrap;">${safeMessage || "未入力"}</td>
           </tr>
         </table>
         <p style="margin-top: 20px; font-size: 12px; color: #999;">
@@ -55,9 +100,9 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: "底地共有持分買取 <onboarding@resend.dev>",
       to: ["koujiy@souichirou.org", "mokeygod@gmail.com"],
-      subject: `【底地買取査定】${name}様からのお問い合わせ`,
+      subject: `【底地買取査定】${safeName}様からのお問い合わせ`,
       html: emailHtml,
-      replyTo: email,
+      replyTo: trimmedEmail,
     });
 
     return Response.json({ success: true });

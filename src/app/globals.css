@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #1a3a5c;
-  --color-primary-light: #2a5a8c;
-  --color-accent: #c8a45e;
-  --color-accent-light: #ddc07a;
-  --color-bg: #fafaf8;
-  --color-bg-dark: #f0efe8;
-  --color-text: #2d2d2d;
-  --color-text-light: #6b6b6b;
+  /* 安心感のある深いブルーグリーン + 爽やかなアクセント */
+  --color-primary: #1b6b5a;
+  --color-primary-light: #238c74;
+  --color-primary-dark: #134d41;
+  --color-accent: #e8943a;
+  --color-accent-light: #f0ab5e;
+  --color-bg: #fafbf9;
+  --color-bg-dark: #f0f2ed;
+  --color-text: #333333;
+  --color-text-light: #666666;
   --color-white: #ffffff;
   --color-success: #2d8a4e;
-  --color-border: #e0dfd8;
+  --color-border: #dde3d8;
+  --color-soft-green: #e8f0e6;
 }
 
 @theme inline {
   --color-primary: var(--color-primary);
   --color-primary-light: var(--color-primary-light);
+  --color-primary-dark: var(--color-primary-dark);
   --color-accent: var(--color-accent);
   --color-accent-light: var(--color-accent-light);
   --color-bg: var(--color-bg);
@@ -25,6 +29,7 @@
   --color-text-light: var(--color-text-light);
   --color-success: var(--color-success);
   --color-border: var(--color-border);
+  --color-soft-green: var(--color-soft-green);
 }
 
 body {
@@ -34,6 +39,12 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-gradient { animation: none; }
+  .animate-fade-in-up { animation: none; }
 }
 
 /* Custom scrollbar */
@@ -48,7 +59,7 @@ html {
   border-radius: 4px;
 }
 
-/* Animated gradient for hero */
+/* Hero gradient - 安心感のある落ち着いたグリーン */
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -56,9 +67,9 @@ html {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #1a3a5c 0%, #2a5a8c 30%, #1a3a5c 60%, #0d2240 100%);
+  background: linear-gradient(135deg, #1b6b5a 0%, #238c74 30%, #1b6b5a 60%, #134d41 100%);
   background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
+  animation: gradientShift 12s ease infinite;
 }
 
 /* Fade in animation */
