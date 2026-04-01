@@ -120,7 +120,7 @@ export default function Home() {
           {/* 相談風景の写真 */}
           <div className="relative w-full h-56 md:h-72 rounded-2xl overflow-hidden mb-10">
             <Image
-              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1200"
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80"
               alt="専門スタッフとの丁寧なご相談風景"
               fill
               className="object-cover"

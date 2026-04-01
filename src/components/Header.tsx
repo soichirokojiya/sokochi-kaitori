@@ -16,10 +16,7 @@ export default function Header() {
               <rect x="18" y="28" width="4" height="4" fill="#14B8A6"/>
             </svg>
           </div>
-          <div className="leading-snug">
-            <div className="text-[15px] font-bold text-[var(--color-primary)]">底地の共有持分買取</div>
-            <div className="text-[11px] text-[var(--color-text-muted)]">Common Future & Co.株式会社</div>
-          </div>
+          <div className="text-[15px] font-bold text-[var(--color-primary)] leading-snug">底地の共有持分買取</div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium text-[var(--color-text-light)]">
