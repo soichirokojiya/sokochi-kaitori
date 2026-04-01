@@ -117,20 +117,6 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">選ばれる理由</h2>
           <p className="text-center text-[var(--color-text-muted)] mb-12">底地×共有持分の専門家として、複雑な案件に対応します</p>
 
-          {/* 相談風景の写真 */}
-          <div className="relative w-full h-56 md:h-72 rounded-2xl overflow-hidden mb-10">
-            <Image
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80"
-              alt="専門スタッフとの丁寧なご相談風景"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-            <p className="absolute bottom-5 left-6 text-white font-bold text-lg">
-              専門スタッフが丁寧にご相談をお受けします
-            </p>
-          </div>
-
           <div className="grid md:grid-cols-2 gap-6">
             {[
               { num: "01", title: "底地×共有持分に完全特化", desc: "「底地の共有持分」という最もニッチな領域に特化。借地権が絡む複雑な権利関係にも精通しています。" },
