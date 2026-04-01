@@ -6,12 +6,12 @@ export default function Home() {
   return (
     <>
       {/* Hero - 日本の住宅街写真 + テキスト */}
-      <section className="relative bg-[var(--color-primary-dark)] text-white overflow-hidden">
+      <section className="relative text-white overflow-hidden hero-bg">
         <Image
           src="https://images.unsplash.com/photo-1751203659198-6fee30bf6df2?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1600"
           alt="日本の住宅街"
           fill
-          className="object-cover opacity-25"
+          className="object-cover opacity-15 mix-blend-overlay"
           priority
         />
         <div className="relative z-10 max-w-5xl mx-auto px-5 py-20 md:py-28">
@@ -312,7 +312,7 @@ export default function Home() {
           className="object-cover"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-[var(--color-primary-dark)]/85" />
+        <div className="absolute inset-0 bg-[var(--color-primary)]/80" />
         <div className="relative z-10 max-w-3xl mx-auto px-5">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">まずは無料査定からお気軽にどうぞ</h2>

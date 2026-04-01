@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  /* Trust teal + Professional blue - 安心・信頼・爽やか */
-  --color-primary: #0F766E;
-  --color-primary-light: #14B8A6;
-  --color-primary-dark: #0D5F59;
-  --color-cta: #0369A1;
-  --color-cta-light: #0284C7;
+  /* 明るく爽やかなカラー */
+  --color-primary: #0D9488;
+  --color-primary-light: #2DD4BF;
+  --color-primary-dark: #0F766E;
+  --color-cta: #2563EB;
+  --color-cta-light: #3B82F6;
   --color-bg: #F0FDFA;
   --color-bg-white: #FFFFFF;
   --color-bg-muted: #F0F9FF;
-  --color-text: #134E4A;
+  --color-text: #1E293B;
   --color-text-light: #475569;
-  --color-text-muted: #64748B;
-  --color-success: #059669;
-  --color-border: #D1E9E5;
-  --color-accent-warm: #D97706;
+  --color-text-muted: #94A3B8;
+  --color-success: #10B981;
+  --color-border: #E2E8F0;
+  --color-accent-warm: #F59E0B;
 }
 
 @theme inline {
@@ -48,20 +48,9 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-bg { animation: none; }
 }
 
-/* Clean hero - 落ち着いた信頼感 */
+/* Hero - 明るいグラデーション */
 .hero-bg {
-  background: linear-gradient(160deg, #0F766E 0%, #0D9488 50%, #0F766E 100%);
-}
-
-/* Subtle fade in */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+  background: linear-gradient(160deg, #0D9488 0%, #14B8A6 40%, #2DD4BF 100%);
 }
