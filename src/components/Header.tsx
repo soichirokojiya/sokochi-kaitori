@@ -12,10 +12,10 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-3 cursor-pointer">
           <div className="w-10 h-10 bg-[var(--color-primary)] rounded-lg flex items-center justify-center flex-shrink-0">
             <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6">
-              <path d="M10 32 C14 28, 20 30, 24 26 C28 22, 34 24, 38 20" stroke="#14B8A6" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+              <path d="M10 32 C14 28, 20 30, 24 26 C28 22, 34 24, 38 20" stroke="#60A5FA" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
               <path d="M10 26 C14 22, 20 24, 24 20 C28 16, 34 18, 38 14" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.9"/>
               <path d="M10 20 C14 16, 20 18, 24 14 C28 10, 34 12, 38 8" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.5"/>
-              <rect x="8" y="36" width="32" height="3" rx="1.5" fill="#14B8A6" opacity="0.6"/>
+              <rect x="8" y="36" width="32" height="3" rx="1.5" fill="#60A5FA" opacity="0.6"/>
             </svg>
           </div>
           <div className="text-[15px] font-bold text-[var(--color-primary)] leading-snug">底地の共有持分買取</div>
