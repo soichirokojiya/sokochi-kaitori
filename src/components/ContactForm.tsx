@@ -56,7 +56,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
+      <div className="bg-white rounded-2xl p-8 shadow-lg text-center text-[var(--color-text)]">
         <div className="w-16 h-16 bg-[var(--color-success)] rounded-full flex items-center justify-center mx-auto mb-4">
           <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -78,7 +78,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 md:p-8 shadow-lg space-y-5">
+    <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 md:p-8 shadow-lg space-y-5 text-[var(--color-text)]">
       <div className="grid md:grid-cols-2 gap-5">
         <div>
           <label className="block text-sm font-bold mb-1">
