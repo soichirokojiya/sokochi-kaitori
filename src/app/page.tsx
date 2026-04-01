@@ -252,7 +252,7 @@ export default function Home() {
       <section id="faq" className="py-20">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-14">よくあるご質問</h2>
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion className="space-y-3">
             {[
               { q: "他の共有者に知られずに売却できますか？", a: "はい、可能です。共有持分の売却は各共有者の権利として認められており、他の共有者の同意や通知は法律上不要です。秘密厳守で対応いたします。" },
               { q: "底地の共有持分はいくらぐらいで売れますか？", a: "一般的な目安として更地価格の10〜15%程度ですが、条件によって大きく変わります。当社は上限価格なしで査定しますので、まずは無料査定をご利用ください。" },

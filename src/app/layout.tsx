@@ -16,24 +16,24 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sokochi-kaitori.vercel.app"),
   title: {
-    default: "底地の共有持分買取｜最短当日買取・上限価格なし｜Common Future & Co.",
-    template: "%s｜底地の共有持分買取 Common Future & Co.",
+    default: "底地の共有持分を買取｜底地売却の相談なら底地ドットコム",
+    template: "%s｜底地ドットコム",
   },
   description:
-    "底地の共有持分でお困りですか？他の共有者の同意不要で、あなたの持分だけ売却できます。最短当日買取・上限価格なし。底地×共有持分に特化した専門買取。全国対応。",
+    "底地の共有持分の売却・買取なら底地ドットコム。他の共有者の同意不要で、あなたの持分だけ売却できます。最短当日買取・上限価格なし・仲介手数料0円。底地×共有持分に特化した専門買取で、相続トラブルや複雑な権利関係もスムーズに解決。全国対応・秘密厳守。まずは無料査定からお気軽にご相談ください。",
   keywords: ["底地", "共有持分", "買取", "底地 売却", "共有持分 売却", "底地 共有持分", "底地 相続", "底地 買取業者"],
   icons: { icon: "/favicon.png", apple: "/apple-touch-icon.png" },
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    siteName: "底地の共有持分買取｜Common Future & Co.",
-    title: "底地の共有持分買取｜最短当日買取・上限価格なし",
-    description: "他の共有者の同意不要。あなたの持分だけ売却可能。最短当日買取・上限価格なし。",
+    siteName: "底地ドットコム",
+    title: "底地の共有持分を買取｜底地売却の相談なら底地ドットコム",
+    description: "底地の共有持分の売却・買取なら底地ドットコム。他の共有者の同意不要。最短当日買取・上限価格なし・仲介手数料0円。全国対応。",
   },
   twitter: {
     card: "summary_large_image",
-    title: "底地の共有持分買取｜Common Future & Co.",
-    description: "底地の共有持分に特化した専門買取サービス。最短当日買取・上限価格なし・全国対応。",
+    title: "底地の共有持分を買取｜底地ドットコム",
+    description: "底地の共有持分に特化した専門買取。最短当日買取・上限価格なし・全国対応。無料査定受付中。",
   },
   robots: { index: true, follow: true },
 };
