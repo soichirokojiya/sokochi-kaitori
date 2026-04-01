@@ -49,9 +49,12 @@ export default function Home() {
             <strong className="text-white">最短当日買取。上限価格なし。</strong><br />
             複雑な権利関係も、専門スタッフが丁寧に対応します。
           </p>
-          <Button asChild size="lg" className="bg-white text-[var(--color-primary-dark)] hover:bg-white/90 font-bold text-lg px-10 py-6 rounded-xl shadow-lg cursor-pointer">
-            <Link href="#contact">無料査定を申し込む</Link>
-          </Button>
+          <Link
+            href="#contact"
+            className="inline-block bg-white text-[var(--color-primary-dark)] hover:bg-white/90 font-bold text-lg px-10 py-4 rounded-xl shadow-lg cursor-pointer transition-colors duration-200"
+          >
+            無料査定を申し込む
+          </Link>
           <div className="flex flex-wrap gap-6 mt-10 text-[15px]">
             {["最短当日買取", "上限価格なし", "全国対応", "秘密厳守"].map((t) => (
               <span key={t} className="flex items-center gap-1.5 opacity-90">
