@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://sokochi-kaitori.vercel.app/sitemap.xml",
+    sitemap: "https://socochi.com/sitemap.xml",
   };
 }

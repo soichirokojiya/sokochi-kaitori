@@ -14,7 +14,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sokochi-kaitori.vercel.app"),
+  metadataBase: new URL("https://socochi.com"),
   title: {
     default: "底地の共有持分専門｜底地売却の相談なら底地ドットコム",
     template: "%s｜底地ドットコム",
@@ -57,8 +57,8 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Common Future & Co.株式会社",
               description: "底地の共有持分に特化した専門買取サービス",
-              url: "https://sokochi-kaitori.vercel.app",
-              logo: "https://sokochi-kaitori.vercel.app/favicon.png",
+              url: "https://socochi.com",
+              logo: "https://socochi.com/favicon.png",
             }),
           }}
         />
