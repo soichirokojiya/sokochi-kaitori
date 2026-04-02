@@ -255,11 +255,10 @@ export default function Home() {
           <Accordion className="space-y-3">
             {[
               { q: "他の共有者に知られずに売却できますか？", a: "はい、可能です。共有持分の売却は各共有者の権利として認められており、他の共有者の同意や通知は法律上不要です。秘密厳守で対応いたします。" },
-              { q: "底地の共有持分はいくらぐらいで売れますか？", a: "一般的な目安として更地価格の10〜15%程度ですが、条件によって大きく変わります。当社は上限価格なしで査定しますので、まずは無料査定をご利用ください。" },
               { q: "本当に当日買取できますか？", a: "はい。書類が揃っていれば最短当日での買取が可能です。お急ぎの場合はその旨をお伝えください。" },
               { q: "相続登記がまだ済んでいませんが売却できますか？", a: "売却前に相続登記が必要ですが、提携の司法書士がサポートいたしますのでご安心ください。" },
               { q: "遠方に住んでいますが対応してもらえますか？", a: "全国どこからでもご対応可能です。郵送やオンラインでの契約にも対応しております。" },
-              { q: "査定だけでも大丈夫ですか？", a: "もちろんです。査定は完全無料で、お断りいただいても費用はかかりません。しつこい営業も一切いたしません。" },
+              { q: "査定だけでも大丈夫ですか？", a: "もちろんです。ご相談・査定は完全無料で、お断りいただいても費用はかかりません。しつこい営業も一切いたしません。" },
             ].map((item, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border rounded-xl px-5 bg-card">
                 <AccordionTrigger className="text-left font-bold py-5 text-[16px] cursor-pointer hover:no-underline">
@@ -279,7 +278,6 @@ export default function Home() {
                 "@type": "FAQPage",
                 mainEntity: [
                   { "@type": "Question", name: "他の共有者に知られずに売却できますか？", acceptedAnswer: { "@type": "Answer", text: "はい、可能です。共有持分の売却は各共有者の権利として認められており、他の共有者の同意や通知は法律上不要です。" } },
-                  { "@type": "Question", name: "底地の共有持分はいくらぐらいで売れますか？", acceptedAnswer: { "@type": "Answer", text: "一般的な目安として更地価格の10〜15%程度ですが、条件によって大きく変わります。" } },
                   { "@type": "Question", name: "本当に当日買取できますか？", acceptedAnswer: { "@type": "Answer", text: "はい。書類が揃っていれば最短当日での買取が可能です。" } },
                   { "@type": "Question", name: "相続登記がまだ済んでいませんが売却できますか？", acceptedAnswer: { "@type": "Answer", text: "売却前に相続登記が必要ですが、提携の司法書士がサポートいたします。" } },
                   { "@type": "Question", name: "遠方に住んでいますが対応してもらえますか？", acceptedAnswer: { "@type": "Answer", text: "全国どこからでもご対応可能です。郵送やオンラインでの契約にも対応しております。" } },
