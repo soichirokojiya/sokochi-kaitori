@@ -56,7 +56,7 @@ export default function Home() {
             無料査定を申し込む
           </Link>
           <div className="flex flex-wrap gap-6 mt-10 text-[15px]">
-            {["最短当日買取", "上限価格なし", "全国対応", "秘密厳守"].map((t) => (
+            {["最短当日買取", "上限価格なし", "一都三県・関西対応", "秘密厳守"].map((t) => (
               <span key={t} className="flex items-center gap-1.5 opacity-90">
                 <CheckIcon className="w-4 h-4" />{t}
               </span>
@@ -73,7 +73,7 @@ export default function Home() {
               { value: "最短当日", label: "買取スピード" },
               { value: "上限なし", label: "買取価格" },
               { value: "0円", label: "仲介手数料" },
-              { value: "全国", label: "対応エリア" },
+              { value: "首都圏・関西", label: "対応エリア" },
             ].map((item) => (
               <div key={item.label}>
                 <p className="text-2xl md:text-3xl font-extrabold text-primary">{item.value}</p>
@@ -257,7 +257,7 @@ export default function Home() {
               { q: "他の共有者に知られずに売却できますか？", a: "はい、可能です。共有持分の売却は各共有者の権利として認められており、他の共有者の同意や通知は法律上不要です。秘密厳守で対応いたします。" },
               { q: "本当に当日買取できますか？", a: "はい。書類が揃っていれば最短当日での買取が可能です。お急ぎの場合はその旨をお伝えください。" },
               { q: "相続登記がまだ済んでいませんが売却できますか？", a: "売却前に相続登記が必要ですが、提携の司法書士がサポートいたしますのでご安心ください。" },
-              { q: "遠方に住んでいますが対応してもらえますか？", a: "全国どこからでもご対応可能です。郵送やオンラインでの契約にも対応しております。" },
+              { q: "遠方に住んでいますが対応してもらえますか？", a: "一都三県（東京・神奈川・千葉・埼玉）および関西都市部（大阪・京都・兵庫）を中心にご対応しております。" },
               { q: "査定だけでも大丈夫ですか？", a: "もちろんです。ご相談・査定は完全無料で、お断りいただいても費用はかかりません。しつこい営業も一切いたしません。" },
             ].map((item, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border rounded-xl px-5 bg-card">
@@ -280,7 +280,7 @@ export default function Home() {
                   { "@type": "Question", name: "他の共有者に知られずに売却できますか？", acceptedAnswer: { "@type": "Answer", text: "はい、可能です。共有持分の売却は各共有者の権利として認められており、他の共有者の同意や通知は法律上不要です。" } },
                   { "@type": "Question", name: "本当に当日買取できますか？", acceptedAnswer: { "@type": "Answer", text: "はい。書類が揃っていれば最短当日での買取が可能です。" } },
                   { "@type": "Question", name: "相続登記がまだ済んでいませんが売却できますか？", acceptedAnswer: { "@type": "Answer", text: "売却前に相続登記が必要ですが、提携の司法書士がサポートいたします。" } },
-                  { "@type": "Question", name: "遠方に住んでいますが対応してもらえますか？", acceptedAnswer: { "@type": "Answer", text: "全国どこからでもご対応可能です。郵送やオンラインでの契約にも対応しております。" } },
+                  { "@type": "Question", name: "遠方に住んでいますが対応してもらえますか？", acceptedAnswer: { "@type": "Answer", text: "一都三県（東京・神奈川・千葉・埼玉）および関西都市部（大阪・京都・兵庫）を中心にご対応しております。" } },
                   { "@type": "Question", name: "査定だけでも大丈夫ですか？", acceptedAnswer: { "@type": "Answer", text: "もちろんです。査定は完全無料で、お断りいただいても費用はかかりません。" } },
                 ],
               }),
