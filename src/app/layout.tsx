@@ -29,11 +29,13 @@ export const metadata: Metadata = {
     siteName: "底地ドットコム",
     title: "底地の共有持分を買取｜底地売却の相談なら底地ドットコム",
     description: "底地の共有持分の売却・買取なら底地ドットコム。他の共有者の同意不要。最短当日買取・上限価格なし・仲介手数料0円。全国対応。",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "底地の共有持分を買取｜底地ドットコム",
     description: "底地の共有持分に特化した専門買取。最短当日買取・上限価格なし・全国対応。無料査定受付中。",
+    images: ["/og.png"],
   },
   robots: { index: true, follow: true },
 };
